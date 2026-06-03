@@ -1,0 +1,133 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                                                                      ║
+║            CHECKLIST DE ACTIVACIÓN - SISTEMA DE VENTAS              ║
+║                    Pack Premium Manhwa Narrado                       ║
+║                                                                      ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Marca con [X] cuando completes cada paso:
+
+
+FASE 1: VERIFICACIÓN INICIAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 1.1. Abrir terminal en: C:\Users\Emmanuel\Desktop\manhwa-premium-pack
+[ ] 1.2. Ejecutar: python verify_setup.py
+[ ] 1.3. Confirmar que rclone está instalado
+[ ] 1.4. Confirmar que Pack ZIP existe (1.6 GB)
+[ ] 1.5. Confirmar que GitHub Pages está online
+
+
+FASE 2: CONFIGURAR GOOGLE DRIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 2.1. Ejecutar: rclone config
+[ ] 2.2. Crear nuevo remote con nombre: gdrive
+[ ] 2.3. Seleccionar tipo: drive (Google Drive)
+[ ] 2.4. Autorizar en navegador
+[ ] 2.5. Confirmar que gdrive aparece en listado de remotes
+
+
+FASE 3: SUBIR PACK A DRIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 3.1. Ejecutar: python upload_to_drive.py
+[ ] 3.2. Confirmar que subida completó sin errores
+[ ] 3.3. Verificar que existe: drive_link.txt
+[ ] 3.4. Verificar que existe: drive_link_direct.txt
+[ ] 3.5. Copiar contenido de drive_link_direct.txt
+[ ] 3.6. Guardar el link en un lugar seguro (lo necesitarás)
+
+
+FASE 4: CUENTA GUMROAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 4.1. Ir a: https://gumroad.com/signup
+[ ] 4.2. Crear cuenta con tu email
+[ ] 4.3. Verificar email (check inbox)
+[ ] 4.4. Login en Gumroad
+[ ] 4.5. Ir a Settings → Payouts
+[ ] 4.6. Conectar método de pago (banco o PayPal)
+
+
+FASE 5: CREAR PRODUCTO EN GUMROAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 5.1. Ir a: https://app.gumroad.com/products/new
+[ ] 5.2. Product name: Pack Premium: El Mejor Ingeniero del Mundo - 13 Capítulos Narrados
+[ ] 5.3. Price: 9.99 USD
+[ ] 5.4. Description: Copiar de QUICK_START.md
+[ ] 5.5. Content: Pegar link de drive_link_direct.txt
+[ ] 5.6. (Opcional) Subir cover image del manhwa
+[ ] 5.7. Click en "Publish"
+[ ] 5.8. Copiar URL del producto (https://USUARIO.gumroad.com/l/...)
+[ ] 5.9. Guardar URL en un lugar seguro
+
+
+FASE 6: ACTUALIZAR LANDING PAGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 6.1. Abrir: index.html en editor de texto
+[ ] 6.2. Buscar (Ctrl+F): <button class="cta-button" id="buyButton">
+[ ] 6.3. Reemplazar el botón con <a> que apunta a tu Gumroad
+[ ] 6.4. Buscar y eliminar: <div class="payment-notice">
+[ ] 6.5. Guardar index.html
+[ ] 6.6. Ejecutar: git add index.html
+[ ] 6.7. Ejecutar: git commit -m "Activar sistema de pagos Gumroad"
+[ ] 6.8. Ejecutar: git push
+
+
+FASE 7: VERIFICACIÓN FINAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 7.1. Esperar 2-3 minutos (GitHub Pages actualiza)
+[ ] 7.2. Abrir: https://corgipollo.github.io/manhwa-premium-pack/
+[ ] 7.3. Verificar que página carga correctamente
+[ ] 7.4. Verificar que botón "Comprar Ahora" es visible
+[ ] 7.5. Click en botón → debe abrir Gumroad
+[ ] 7.6. Verificar que producto se ve correcto en Gumroad
+[ ] 7.7. Verificar precio: $9.99 USD
+
+
+FASE 8: PRUEBA DE COMPRA (OPCIONAL)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 8.1. Realizar compra de prueba de tu propio producto
+[ ] 8.2. Verificar que recibes email de Gumroad
+[ ] 8.3. Verificar que email contiene link de Drive
+[ ] 8.4. Click en link → debe descargar el ZIP
+[ ] 8.5. Descargar y verificar que ZIP abre correctamente
+[ ] 8.6. (Opcional) Pedir reembolso si no quieres quedarte con la compra
+
+
+FASE 9: ¡SISTEMA ACTIVO! 🚀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[ ] 9.1. Compartir link en redes sociales
+[ ] 9.2. Postear en Reddit (r/manhwa, r/noveltranslations)
+[ ] 9.3. Compartir en grupos de Facebook
+[ ] 9.4. Crear contenido en TikTok/Instagram con link en bio
+[ ] 9.5. Monitorear dashboard de Gumroad
+[ ] 9.6. ¡Celebrar la primera venta! 🎉
+
+
+NOTAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Links importantes:
+- Landing page:  https://corgipollo.github.io/manhwa-premium-pack/
+- GitHub repo:   https://github.com/Corgipollo/manhwa-premium-pack
+- Gumroad dash:  https://app.gumroad.com/
+
+Archivos importantes:
+- QUICK_START.md       → Comandos copy-paste
+- INSTRUCCIONES_EMMANUEL.md → Guía detallada
+- RESUMEN_EJECUTIVO.md → Overview completo
+
+Troubleshooting:
+- Ejecutar: python verify_setup.py
+- Leer: INSTRUCCIONES_EMMANUEL.md (sección Troubleshooting)
+
+Tiempo total estimado: 10-15 minutos
+
+╚══════════════════════════════════════════════════════════════════════╝
