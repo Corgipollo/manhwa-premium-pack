@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pack Premium: 13 capítulos de 'El Mejor Ingeniero del Mundo' narrados profesionalmente en español. Descarga instantánea.">
+    <title>Pack Premium: El Mejor Ingeniero del Mundo - 13 Capítulos Narrados</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #ffd93d;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><path d="M0 0L50 50L0 100L50 50L100 100L100 0L50 50L100 0L50 50L0 0Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-image {
+            max-width: 600px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 5px solid rgba(255,255,255,0.2);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: var(--light);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Chapters Section */
+        .chapters {
+            padding: 4rem 2rem;
+            background: linear-gradient(to bottom, white, var(--light));
+        }
+
+        .chapters h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .chapters-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .chapters-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .chapter-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s;
+        }
+
+        .chapter-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .chapter-number {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .chapter-info {
+            flex-grow: 1;
+        }
+
+        .chapter-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .chapter-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 4rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-card {
+            max-width: 500px;
+            margin: 3rem auto;
+            background: white;
+            color: var(--dark);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price sup {
+            font-size: 2rem;
+            vertical-align: super;
+        }
+
+        .price-details {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .value-props {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .value-prop {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            color: var(--dark);
+        }
+
+        .value-prop::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #e74c3c);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.6);
+        }
+
+        .payment-notice {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #fff3cd;
+            border-radius: 10px;
+            color: #856404;
+            font-size: 0.95rem;
+            border: 2px solid #ffeaa7;
+        }
+
+        .payment-notice strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .price {
+                font-size: 3rem;
+            }
+
+            .chapters-list {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">✨ PACK PREMIUM</span>
+            <h1>El Mejor Ingeniero del Mundo</h1>
+            <p class="subtitle">13 Capítulos Narrados Profesionalmente en Español</p>
+
+            <!-- Preview image placeholder - Emmanuel puede reemplazar con screenshot del manhwa -->
+            <div style="background: rgba(255,255,255,0.1); padding: 3rem; border-radius: 15px; margin: 2rem 0;">
+                <p style="font-size: 1.2rem; opacity: 0.9;">🎬 Preview del Manhwa Narrado</p>
+                <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 0.5rem;">(Imagen del video aquí)</p>
+            </div>
+
+            <p style="font-size: 1.1rem; opacity: 0.9;">Disfruta de la historia completa del ingeniero genio que conquista el mundo medieval con tecnología moderna</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">¿Por qué este pack?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎙️</div>
+                    <h3>Narración Profesional</h3>
+                    <p>Voz clonada con IA de alta calidad, perfecta sincronización con las escenas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Descarga Instantánea</h3>
+                    <p>Acceso inmediato vía Google Drive. Mira en cualquier dispositivo</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎬</div>
+                    <h3>Alta Calidad HD</h3>
+                    <p>Videos optimizados 1080p con subtítulos perfectamente sincronizados</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♾️</div>
+                    <h3>Tuyo Para Siempre</h3>
+                    <p>Un solo pago, acceso ilimitado. Sin suscripciones ni renovaciones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section class="chapters">
+        <div class="container">
+            <h2>📚 Contenido del Pack</h2>
+            <p class="chapters-subtitle">13 capítulos completos - Más de 2 horas de contenido premium</p>
+
+            <div class="chapters-list">
+                <div class="chapter-item">
+                    <div class="chapter-number">1</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 1: El Despertar del Genio</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">2</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 2: Primeros Pasos en un Mundo Nuevo</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">3</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 3: Construcción del Imperio</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">4</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 4: Desafíos Inesperados</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">5</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 5: Aliados y Enemigos</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">6</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 6: Innovación Tecnológica</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">7</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 7: La Gran Revelación</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">8</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 8: Batalla de Ingenio</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">9</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 9: Expansión del Reino</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">10</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 10: Secretos del Pasado</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">11</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 11: El Contraataque</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">12</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 12: Victoria Estratégica</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">13</div>
+                    <div class="chapter-info">
+                        <div class="chapter-title">Capítulo 13: Nuevo Horizonte</div>
+                        <div class="chapter-duration">⏱️ ~10 minutos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <h2>💎 Oferta de Lanzamiento</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Acceso completo al pack premium</p>
+
+        <div class="price-card">
+            <div style="text-decoration: line-through; color: #999; font-size: 1.5rem;">$19.99</div>
+            <div class="price"><sup>$</sup>9<sup>.99</sup></div>
+            <div class="price-details">Precio de lanzamiento | Pago único</div>
+
+            <div class="value-props">
+                <div class="value-prop">13 videos HD completos</div>
+                <div class="value-prop">Descarga instantánea vía Google Drive</div>
+                <div class="value-prop">Acceso ilimitado de por vida</div>
+                <div class="value-prop">Sin suscripciones ni cargos ocultos</div>
+                <div class="value-prop">Garantía de calidad premium</div>
+                <div class="value-prop">Soporte vía email</div>
+            </div>
+
+            <!-- Botón placeholder - Emmanuel reemplazará con link de Gumroad -->
+            <button class="cta-button" id="buyButton">
+                🛒 Comprar Ahora - $9.99
+            </button>
+
+            <div class="payment-notice">
+                <strong>⏳ Sistema de Pago Activándose</strong>
+                El botón de compra estará funcional en las próximas 24 horas. ¡Regresa pronto para aprovechar el precio de lanzamiento!
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>❓ Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo recibo los videos después de comprar?</div>
+                <div class="faq-answer">Inmediatamente después del pago recibirás un email con el link de descarga de Google Drive. Podrás descargar el archivo ZIP completo con los 13 videos.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿En qué formato están los videos?</div>
+                <div class="faq-answer">Todos los videos están en formato MP4 de alta calidad (1080p), compatibles con cualquier dispositivo: PC, Mac, tablets, smartphones, smart TV, etc.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Hay límite de descargas?</div>
+                <div class="faq-answer">No. Una vez que compres, el link de Google Drive es tuyo para siempre. Puedes descargar cuantas veces necesites.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Qué métodos de pago aceptan?</div>
+                <div class="faq-answer">Procesamos pagos seguros a través de Gumroad, que acepta tarjetas de crédito/débito (Visa, Mastercard, AMEX) y PayPal.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">¿Ofrecen reembolsos?</div>
+                <div class="faq-answer">Sí. Si no estás satisfecho con la calidad del contenido, contáctanos dentro de los primeros 7 días y te devolveremos el 100% de tu dinero.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Manhwa Narrado Premium. Todos los derechos reservados.</p>
+        <p style="margin-top: 1rem; opacity: 0.7;">Contacto: <a href="mailto:soporte@example.com" style="color: var(--secondary);">soporte@example.com</a></p>
+    </footer>
+
+    <script>
+        // Placeholder para futuro botón de Gumroad
+        document.getElementById('buyButton').addEventListener('click', function() {
+            alert('Sistema de pago activándose en las próximas 24 horas.\n\nPronto podrás completar tu compra. ¡Guarda esta página!');
+        });
+    </script>
+</body>
+</html>
